@@ -66,6 +66,7 @@ cmake_args = ['cmake']
 
 add_cmake_define(cmake_args, 'ENABLE_HLSL', 'ON')
 add_cmake_define(cmake_args, 'CMAKE_BUILD_TYPE', 'Release')
+add_cmake_define(cmake_args, 'BUILD_SHARED_LIBS', 'ON')
 add_cmake_define(cmake_args, 'CMAKE_INSTALL_PREFIX', gl_build_dir+'/install')
 
 cmake_args.append('../Source')
