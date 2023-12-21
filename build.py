@@ -102,21 +102,35 @@ args = ['cmake']
 args.append('-DCMAKE_SYSTEM_NAME=' + target_platform)
 
 if target_platform == 'Windows':
-    args.append('-DDIASDK_INCLUDE_DIR=' + dia_include_dir)
     args.append('-DCMAKE_C_COMPILER=' + c_compiler)
     args.append('-DCMAKE_CXX_COMPILER=' + cxx_compiler)
+    
+    args.append('-DDIASDK_INCLUDE_DIR=' + dia_include_dir)
     args.append('-DDIASDK_GUIDS_LIBRARY=' + dia_lib_path)
 
     args.append('-DD3D12_INCLUDE_DIRS=' + deps_include_dir)
     args.append('-DD3D12_LIBRARIES=' + deps_lib_path)
     
-
+args.append('LLVM_INSTALL_UTILS=OFF')
+args.append('LLVM_INSTALL_TOOLCHAIN_ONLY=ON')
+args.append('HLSL_BUILD_DXILCONV=OFF')
+args.append('HLSL_SUPPORT_QUERY_GIT_COMMIT_INFO=OFF')
+args.append('ENABLE_SPIRV_CODEGEN=ON')
+args.append('SPIRV_BUILD_TESTS=OFF')
+args.append('LLVM_INCLUDE_TOOLS=ON')
+args.append('LLVM_BUILD_TOOLS=ON')
+args.append('LLVM_INCLUDE_UTILS=ON')
+args.append('LLVM_BUILD_RUNTIME=ON')
+args.append('LLVM_BUILD_EXAMPLES=OFF')
+args.append('LLVM_INCLUDE_EXAMPLES=OFF')
+args.append('LLVM_BUILD_TESTS=OFF')
+args.append('LLVM_INCLUDE_TESTS=OFF')
+args.append('HLSL_INCLUDE_TESTS=OFF')
 args.append('-C')
 args.append(dx_predefined)
 args.append(dx_source_dir)
 args.append('-GNinja')
 args.append('-DCMAKE_BUILD_TYPE=Release')
-args.append('-DENABLE_SPIRV_CODEGEN=ON')
 
 
 # run Cmake with predefined settings

@@ -2,6 +2,6 @@ obj/
 DXBuild-Linux/
 DXBuild-Windows/
 DXBuild-Darwin/
-DXCompiler/
+#DXCompiler/
 DiaSDK/
 DevKit/
