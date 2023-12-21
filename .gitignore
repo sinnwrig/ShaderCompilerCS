@@ -1,7 +1,3 @@
 obj/
-DXBuild-Linux/
-DXBuild-Windows/
-DXBuild-Darwin/
-DXCompiler/
-DiaSDK/
-DevKit/
+bin/
+Glslang/
